@@ -119,7 +119,7 @@ const About = () => {
                 </motion.h2>
                 <motion.p variants = {fadeIn('right', 0.4)} initial="hidden" animate="show" exit="hidden"
                 className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'>
-                    10 years ago, I began freelancing as a developer. Since then, I've done remote
+                    10 years ago, I began freelancing as a developer. Since then, I&apos;ve done remote
                     work for agencies, consulted for startups, and collaborated on digital products for
                     business and consumer use.
                 </motion.p>
