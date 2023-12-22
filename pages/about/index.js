@@ -170,13 +170,13 @@ const About = () => {
                                 <div key={itemIndex} className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2
                                 items-center text-white/60'>
                                     {/* title */}
-                                    <div className='font-light mb-2 md:mb-0'>{item.title}</div>
-                                    <div className='hidden md:flex'>-</div>
-                                    <div>{item.stage}</div>
+                                    <div key={item} className='font-light mb-2 md:mb-0'>{item.title}</div>
+                                    <div key={item} className='hidden md:flex'>-</div>
+                                    <div key={item}>{item.stage}</div>
                                     {/* icons */}
-                                    <div className='flex gap-x-4'>
+                                    <div key={itemIndex} className='flex gap-x-4'>
                                         {item.icons?.map((icon, itemIndex)=> {
-                                            return <div className='text-2xl text-white'>{icon}</div>
+                                            return <div key={icon} className='text-2xl text-white'>{icon}</div>
                                         })}
                                     </div>
                                 </div>
