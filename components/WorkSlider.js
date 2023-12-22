@@ -5,19 +5,19 @@ const workSlides = {
       images: [
         {
           title: 'title1',
-          path: '/thumb1.jpg',
+          path: 'thumb1.jpg',
         },
         {
           title: 'title2',
-          path: '/thumb2.jpg',
+          path: 'thumb2.jpg',
         },
         {
           title: 'title3',
-          path: '/thumb3.jpg',
+          path: 'thumb3.jpg',
         },
         {
           title: 'title4',
-          path: '/thumb4.jpg',
+          path: 'thumb4.jpg',
         },
       ],
     },
