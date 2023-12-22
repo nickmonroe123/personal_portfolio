@@ -14,7 +14,7 @@ const Header = () => {
             <div className='flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8'>
                 {/* logo */}
                 <Link href={'/'}>
-                    <Image unoptimized src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" width={220} height={48} alt='' priority={true}/>
+                    <Image unoptimized src={'logo.svg'} width={220} height={48} alt='' priority={true}/>
                 </Link>
                 <Socials />
             </div>
