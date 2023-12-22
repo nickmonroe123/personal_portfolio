@@ -4,12 +4,7 @@ const nextConfig = {
   swcMinify: true
 }
 
-images.unoptimized = true
 module.exports = nextConfig
 
-module.exports = {
-  images: {
-
-    formats:['image/webp']
-  },
-}
+const withImage=require('next-images')
+module.exports = withImage()
