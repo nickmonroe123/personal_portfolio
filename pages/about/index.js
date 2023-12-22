@@ -75,15 +75,15 @@ const aboutData = [
     title: 'credentials',
     info: [
       {
-        title: 'Microsoft Certified - Azure',
+        title: 'Microsoft Certified - Azure1',
         stage: 'AZ900',
       },
       {
-        title: 'Microsoft Certified - Azure',
+        title: 'Microsoft Certified - Azure2',
         stage: 'DP900',
       },
       {
-        title: 'Microsoft Certified - Azure',
+        title: 'Microsoft Certified - Azure3',
         stage: 'AI900',
       },
     ],
