@@ -1,5 +1,6 @@
 // data
-const workSlides = {
+const env = process.env.NODE_ENV;
+var workSlides = {
   slides: [
     {
       images: [
@@ -20,29 +21,61 @@ const workSlides = {
           path: 'thumb4.jpg',
         },
       ],
-    },
-//    {
-//      images: [
-//        {
-//          title: 'title5',
-//          path: '/thumb4.jpg',
-//        },
-//        {
-//          title: 'title6',
-//          path: '/thumb1.jpg',
-//        },
-//        {
-//          title: 'title7',
-//          path: '/thumb2.jpg',
-//        },
-//        {
-//          title: 'title8',
-//          path: '/thumb3.jpg',
-//        },
-//      ],
-//    },
+    }
   ],
 };
+if(env == "development"){
+    workSlides = {
+      slides: [
+        {
+          images: [
+            {
+              title: 'title1',
+              path: '/thumb1.jpg',
+            },
+            {
+              title: 'title2',
+              path: '/thumb2.jpg',
+            },
+            {
+              title: 'title3',
+              path: '/thumb3.jpg',
+            },
+            {
+              title: 'title4',
+              path: '/thumb4.jpg',
+            },
+          ],
+        }
+      ],
+    };
+}
+else if (env == "production"){
+    workSlides = {
+      slides: [
+        {
+          images: [
+            {
+              title: 'title1',
+              path: 'thumb1.jpg',
+            },
+            {
+              title: 'title2',
+              path: 'thumb2.jpg',
+            },
+            {
+              title: 'title3',
+              path: 'thumb3.jpg',
+            },
+            {
+              title: 'title4',
+              path: 'thumb4.jpg',
+            },
+          ],
+        }
+      ],
+    };
+}
 
 // import swiper react components
 import {Swiper, SwiperSlide} from 'swiper/react';

@@ -7,13 +7,22 @@ import Link from 'next/link';
 // icons
 import { HiArrowRight } from 'react-icons/hi2';
 
+const env = process.env.NODE_ENV;
+var image_name = 'rounded-text.png';
+if(env == "development"){
+    image_name = '/rounded-text.png';
+}
+else if (env == "production"){
+    image_name = 'rounded-text.png';
+}
+
 const ProjectsBtn = () => {
   return (
     <div className='mx-auto xl:mx-0'>
         <Link href={'/work'} className='relative w-[185px] h-[185px] flex justify-center items-center bg-circleStar
          bg-cover bg-center bg-no-repeat group'>
             <Image
-                src={'rounded-text.png'}
+                src={image_name}
                 width={141}
                 height={148}
                 alt=''
