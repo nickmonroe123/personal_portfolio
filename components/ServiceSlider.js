@@ -13,28 +13,28 @@ import {
 const ServiceData = [
   {
     icon: <RxCrop />,
-    title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Software Engineering',
+    description: 'Engineer tailored products by designing, developing, and maintaining software.',
   },
   {
     icon: <RxPencil2 />,
-    title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Web Development',
+    description: 'Full stack, start to finish, products created based upon client need.',
   },
   {
     icon: <RxDesktop />,
-    title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Artificial Intelligence',
+    description: 'From scratch solutions or integrations with already existing solutions.',
   },
   {
     icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Data Science',
+    description: 'Extraction of meaningful insights on the data the client holds.',
   },
   {
     icon: <RxRocket />,
-    title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'DevOps',
+    description: 'Complete pipeline setup from start to finish with proper protocol setup.',
   },
 ];
 

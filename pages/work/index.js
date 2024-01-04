@@ -16,13 +16,13 @@ const Work = () => {
                 {/* text */}
                 <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0'>
                     <motion.h2 variants={fadeIn('up', 0.2)} initial="hidden" animate="show" exit="hidden"
-                    className='h2 xl:mt-12'>My Work <span className='text-accent'>.</span></motion.h2>
+                    className='h2 xl:mt-12'>My Work</motion.h2>
                     <motion.p variants={fadeIn('up', 0.4)} initial="hidden" animate="show" exit="hidden"
                     className='mb-4 max-w-[400px] mx-auto lg:mx-0'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        Throughout my career as a software engineer, I have successfully completed a variety of
+                        complex projects that have made significant impacts for my clients. While many of these
+                        are confidential to the client, here is a couple of examples that I can share from my
+                        personal development work.
                     </motion.p>
                 </div>
                 <motion.div variants={fadeIn('down', 0.6)} initial="hidden" animate="show" exit="hidden"

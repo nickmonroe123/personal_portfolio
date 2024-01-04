@@ -8,13 +8,27 @@ import {
   FaReact,
   FaWordpress,
   FaFigma,
+  FaRegSnowflake ,
+  FaFlask,
+  FaGitAlt,
 } from "react-icons/fa";
+
+import { TbBrandDjango, TbBrandVscode  } from "react-icons/tb";
+
+import { FaJava } from "react-icons/fa6";
 
 import {
   SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
+  SiMicrosoftsqlserver ,
+  SiPostgresql,
+  SiSqlite,
+  SiMysql,
+  SiPython ,
+  SiCplusplusbuilder ,
+  SiDatabricks ,
+  SiJupyter ,
+  SiSnowflake ,
+  SiPycharm,
 } from "react-icons/si";
 
 
@@ -28,29 +42,40 @@ const aboutData = [
         icons: [
           <FaHtml5 key={1} />,
           <FaCss3 key={2} />,
-          <FaJs key={3} />,
-          <FaReact key={4} />,
-          <SiNextdotjs key={5} />,
-          <SiFramer key={6} />,
-          <FaWordpress key={7} />,
+          <FaReact key={3} />,
+          <SiNextdotjs key={4} />,
+          <TbBrandDjango key={5} />,
+          <FaFlask key={6} />,
         ],
       },
       {
-        title: 'UI/UX Design',
-        icons: [<FaFigma key={1} />, <SiAdobexd key={2} />, <SiAdobephotoshop key={3} />],
-      },
-    ],
-  },
-  {
-    title: 'awards',
-    info: [
-      {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
+        title: 'Database Administration',
+        icons: [
+            <SiMysql key={1} />,
+            <SiPostgresql key={2} />,
+            <SiSqlite key={3} />,
+            <SiMicrosoftsqlserver key={4} />
+        ],
       },
       {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
+        title: 'Languages',
+        icons: [
+            <SiPython key={1} />,
+            <FaJava key={2} />,
+            <SiCplusplusbuilder key={3} />,
+            <FaJs key={4} />
+        ],
+      },
+      {
+        title: 'Software Engineering',
+        icons: [
+            <SiDatabricks key={1} />,
+            <SiJupyter key={2} />,
+            <FaRegSnowflake key={3} />,
+            <SiPycharm key={4} />,
+            <TbBrandVscode key={5} />,
+            <FaGitAlt key={6} />
+        ],
       },
     ],
   },
@@ -58,16 +83,37 @@ const aboutData = [
     title: 'experience',
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'Senior Big Data Software Engineer - AT&T',
+        stage: '06/2021 - Present',
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
+        title: 'Graduate Assistant/Professor - SIUE',
+        stage: '08/2019 - 5/2022',
       },
       {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+        title: 'TDP Intern - AT&T',
+        stage: '05/2020 - 8/2020',
+      },
+      {
+        title: 'Automation Engineering Intern - Express Scripts',
+        stage: '05/2019 - 8/2019',
+      },
+      {
+        title: 'Software Engineering Intern - Tagg Logistics',
+        stage: '05/2018 - 12/2018',
+      },
+    ],
+  },
+  {
+    title: 'education',
+    info: [
+      {
+        title: 'MS Computer Science (SIUE)',
+        stage: '2020 - 2021',
+      },
+      {
+        title: 'BS Computer Engineering (SIUE)',
+        stage: '2017 - 2020',
       },
     ],
   },
@@ -75,15 +121,15 @@ const aboutData = [
     title: 'credentials',
     info: [
       {
-        title: 'Microsoft Certified - Azure1',
+        title: 'Microsoft Azure Fundamentals',
         stage: 'AZ900',
       },
       {
-        title: 'Microsoft Certified - Azure2',
+        title: 'Microsoft Azure Data Fundamentals',
         stage: 'DP900',
       },
       {
-        title: 'Microsoft Certified - Azure3',
+        title: 'Microsoft Azure AI Fundamentals',
         stage: 'AI900',
       },
     ],
@@ -102,20 +148,19 @@ import CountUp from 'react-countup';
 
 const About = () => {
   const [index, setIndex] = useState(0);
-  console.log(index);
   return (
     <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
         <Circles />
         <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
             <div className='flex-1 flex flex-col justify-center'>
                 <motion.h2 variants = {fadeIn('right', 0.2)} initial="hidden" animate="show" exit="hidden" className='h2'>
-                    Captivating <span className='text-accent'>stories</span> birth magnificent designs.
+                    Crafting Digital <span className='text-accent'>Masterpieces</span>
                 </motion.h2>
                 <motion.p variants = {fadeIn('right', 0.4)} initial="hidden" animate="show" exit="hidden"
                 className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'>
-                    10 years ago, I began freelancing as a developer. Since then, I&apos;ve done remote
-                    work for agencies, consulted for startups, and collaborated on digital products for
-                    business and consumer use.
+                    5 years ago I started my career in Software Engineering. This has consisted of a mix of Full Stack
+                    Web Development, AI/ML Software Engineering, Azure DevOps, and other aspects of the field. Within
+                    the same timeframe I also completed my Masters in Computer Science with a specificity in AI.
                 </motion.p>
                 {/* counters */}
                 <motion.div variants = {fadeIn('right', 0.6)} initial="hidden" animate="show" exit="hidden"
@@ -131,7 +176,7 @@ const About = () => {
                         {/* projects */}
                         <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                             <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                                <CountUp start={0} end={650} duration={5} /> +
+                                <CountUp start={0} end={20} duration={5} /> +
                             </div>
                             <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>Finished projects</div>
                         </div>
@@ -143,18 +188,20 @@ const About = () => {
             className='flex flex-col w-full xl:max-w-[48%] h-[480px]'>
                 <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
                     {aboutData.map((item, itemIndex) => {
-                        return <div key={itemIndex}
+                        return (
+                        <div key={itemIndex}
                         className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'}
                         cursor-pointer capitalize
                         xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute
                         after:-bottom-1 after:left-0`}
                         onClick = {() => setIndex(itemIndex)}
                         >{item.title}</div>
+                        );
                     })}
                 </div>
                 <div className='py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start'>
                     {aboutData[index].info.map((item, itemIndex)=> {
-                        return
+                        return (
                             <div key={itemIndex} className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2
                             items-center text-white/60'>
                                 {/* title */}
@@ -168,6 +215,7 @@ const About = () => {
                                     })}
                                 </div>
                             </div>
+                        );
                     })}
                 </div>
             </motion.div>
