@@ -21,7 +21,7 @@ const sendEmail = async (e) => {
 
     try {
       const res = await fetch('/api/SendEmail', {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },

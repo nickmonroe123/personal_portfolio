@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     const { text } = req.body;
 
     const response = await fetch('https://nicks-apis.onrender.com/send_email', {
