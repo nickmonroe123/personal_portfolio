@@ -4,8 +4,8 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { text } = req.body;
 
-    const response = await fetch('https://nicks-apis.onrender.com/add-record', {
-      method: 'POST',
+    const response = await fetch('https://nicks-apis.onrender.com/send_email', {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
