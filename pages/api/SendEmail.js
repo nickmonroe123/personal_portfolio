@@ -2,14 +2,14 @@ import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email } = req.body;
+    const { text } = req.body;
 
-    const response = await fetch('https://nicks-apis.onrender.com/my-first-api', {
+    const response = await fetch('https://nicks-apis.onrender.com/add-record', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify({ text }),
     });
 
     if (!response.ok) {

@@ -26,9 +26,7 @@ const sendEmail = async (e) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          senderMail: "nm309u@att.com",
-          name: "NICK",
-          content: "TEST",
+          text: "NICk"
         }),
       });
 
