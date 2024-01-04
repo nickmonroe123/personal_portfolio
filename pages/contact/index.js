@@ -10,6 +10,38 @@ import {motion} from 'framer-motion';
 // variants
 import {fadeIn} from '../../variants';
 
+import { useState } from 'react';
+
+//const [email, setEmail] = useState('');
+//const [name, setName] = useState('');
+//const [message, setMessage] = useState('');
+
+const sendEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch('/api/SendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          senderMail: "nm309u@att.com",
+          name: "NICK",
+          content: "TEST",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.status === 'Ok') {
+        alert('Email sent successfully!');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 const Contact = () => {
   return (
     <div className='h-full bg-primary/30'>
@@ -26,7 +58,8 @@ const Contact = () => {
                     </div>
                     <input type="text" placeholder="subject" className="input" />
                     <textarea placeholder='message' className='textarea'></textarea>
-                    <button className='btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all
+                    <button onClick={sendEmail}
+                    className='btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all
                     duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
                         <span className='group-hover:-translate-y-[120%] group-hover:opacity-0
                         transition-all duration-500'>Let&apos;s talk</span>

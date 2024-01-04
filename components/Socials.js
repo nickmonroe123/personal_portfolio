@@ -7,10 +7,10 @@ import {RiGithubLine, RiLinkedinBoxLine, RiFacebookLine, RiDribbbleLine, RiBehan
 const Socials = () => {
   return (
     <div className='flex items-center gap-x-5 text-lg'>
-        <Link href={''} className='hover:text-accent transition-all duration-300'>
+        <Link href={'https://github.com/nickmonroe123'} className='hover:text-accent transition-all duration-300'>
             <RiGithubLine />
         </Link>
-        <Link href={''} className='hover:text-accent transition-all duration-300'>
+        <Link href={'https://www.linkedin.com/in/nick-monroe-b6536a165/'} className='hover:text-accent transition-all duration-300'>
             <RiLinkedinBoxLine />
         </Link>
         <Link href={''} className='hover:text-accent transition-all duration-300'>
