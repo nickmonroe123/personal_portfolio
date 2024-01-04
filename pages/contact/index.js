@@ -29,8 +29,9 @@ const sendEmail = async (e) => {
 //          text: "NICk"
 //        }),
       });
-
+      console.log("ASDAOSDJASD")
       const data = await res.json();
+      console.log("ASDAOSDJASD2")
 
       if (data.status === 'Ok') {
         alert('Email sent successfully!');
