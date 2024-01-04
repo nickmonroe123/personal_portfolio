@@ -20,7 +20,7 @@ const Services = () => {
                     <motion.p variants={fadeIn('up', 0.4)} initial="hidden" animate="show" exit="hidden"
                     className='mb-4 max-w-[400px] mx-auto lg:mx-0'>
                         I specialize in end-to-end software development, creating bespoke applications
-                        that are scalable, reliable, and user-friendly. Whether it's crafting a new software
+                        that are scalable, reliable, and user-friendly. Whether it is crafting a new software
                         from scratch or revamping an existing one, I bring a wealth of expertise to ensure
                         your software functions seamlessly and meets your objectives.
                     </motion.p>
