@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ text }),
+      //body: JSON.stringify({ text }),
     });
 
     if (!response.ok) {

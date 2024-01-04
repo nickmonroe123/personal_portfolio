@@ -25,9 +25,9 @@ const sendEmail = async (e) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          text: "NICk"
-        }),
+//        body: JSON.stringify({
+//          text: "NICk"
+//        }),
       });
 
       const data = await res.json();
