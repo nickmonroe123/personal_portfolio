@@ -12,6 +12,9 @@ export default async function handler(req, res) {
       //body: JSON.stringify({ text }),
     });
 
+    console.log(response);
+    console.log(response.text);
+
     if (!response.ok) {
       res.status(500).json({ message: 'Error sending data' });
     } else {
