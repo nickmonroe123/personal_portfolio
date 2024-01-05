@@ -51,7 +51,7 @@ const Contact = () => {
     event.preventDefault(); // Prevent form submission and page refresh
     setIsLoading(true);
     try {
-      const response = await axios.post('https://your-api-url.com', form);
+      const response = await axios.post('https://nicks-apis.onrender.com/send_email', form);
       setData(response.data); // Set data
     } catch (error) {
       // You can add error handling logic here
