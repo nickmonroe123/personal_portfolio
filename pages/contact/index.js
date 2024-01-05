@@ -16,65 +16,11 @@ import { useState } from 'react';
 //const [name, setName] = useState('');
 //const [message, setMessage] = useState('');
 
-//const sendEmail = async (e) => {
-//    e.preventDefault();
-//
-//    try {
-//      const res = await fetch('/api/SendEmail', {
-//        method: 'GET',
-//        headers: {
-//          'Content-Type': 'application/json',
-//        },
-////        body: JSON.stringify({
-////          text: "NICk"
-////        }),
-//      });
-//      console.log("ASDAOSDJASD")
-//      const data = await res.json();
-//      console.log("ASDAOSDJASD2")
-//
-//      if (data.status === 'Ok') {
-//        alert('Email sent successfully!');
-//      }
-//    } catch (error) {
-//      console.error(error);
-//    }
-//  };
-
-import fetch from 'node-fetch';
-//
-//export default async function handler(req, res) {
-//  if (req.method === 'GET') {
-//    const { text } = req.body;
-//    console.log("ASD")
-//    const response = await fetch('https://nicks-apis.onrender.com/send_email', {
-//      method: 'GET',
-//      headers: {
-//        'Content-Type': 'application/json',
-//      },
-//      //body: JSON.stringify({ text }),
-//    });
-//    console.log("ASD2")
-//
-//    console.log(response);
-//    console.log(response.text);
-//
-//    if (!response.ok) {
-//      res.status(500).json({ message: 'Error sending data' });
-//    } else {
-//      res.status(200).json({ message: 'Data sent' });
-//    }
-//  } else {
-//    res.status(404).json({ message: 'Not found' });
-//  }
-//}
-
 const sendEmail = async (e) => {
     e.preventDefault();
 
     try {
-      console.log("ASD")
-      const res = await fetch('https://nicks-apis.onrender.com/send_email', {
+      const res = await fetch('/api/SendEmail', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +40,6 @@ const sendEmail = async (e) => {
       console.error(error);
     }
   };
-
 
 const Contact = () => {
   return (
