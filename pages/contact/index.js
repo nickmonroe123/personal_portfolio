@@ -15,29 +15,13 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 const Contact = () => {
-//  const [data, setData] = useState(null);
-//  const [isLoading, setIsLoading] = useState(false);
-//
-//  const fetchAPI = async (event) => {
-//    event.preventDefault(); // Prevent form submission and page refresh
-//    setIsLoading(true);
-//    try {
-//      const response = await axios.post('https://nicks-apis.onrender.com/send_email');
-//      setData(response.data); // Set data
-//    } catch (error) {
-//      // You can add error handling logic here
-//      setData(null);
-//    } finally {
-//      setIsLoading(false);
-//    }
-//  };
-
-
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     name_from: '',
     email_from: '',
+    subject_from: '',
+    message_from: '',
   });
 
   const handleInputChange = (event) => {
@@ -90,8 +74,22 @@ const Contact = () => {
                             required
                         />
                     </div>
-                    <input type="text" placeholder="subject" className="input" />
-                    <textarea placeholder='message' className='textarea'></textarea>
+                    <input
+                        type="text"
+                        name="subject_from"
+                        placeholder="subject"
+                        className="input"
+                        value={form.subject_from}
+                        onChange={handleInputChange}
+                        required
+                    />
+                    <textarea
+                        placeholder='message'
+                        name="message_from"
+                        value={form.message_from}
+                        onChange={handleInputChange}
+                        className='textarea'>
+                    </textarea>
                     <button
                     className='btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all
                     duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
