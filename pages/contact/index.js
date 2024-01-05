@@ -60,12 +60,6 @@ const Contact = () => {
     }
   };
 
-  useEffect(() => {
-    if (isLoading) {
-      fetchAPI();
-    }
-  }, [isLoading]);
-
   return (
     <div className='h-full bg-primary/30'>
         <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
@@ -91,7 +85,7 @@ const Contact = () => {
                         absolute text-[22px]'/>
                     </button>
                     <div>
-                      <button onClick={() => setIsLoading(true)}>Fetch Data</button>
+                      <button onClick={fetchAPI}>Fetch Data</button>
                       {isLoading ? (
                         <p>Loading...</p>
                       ) : (
