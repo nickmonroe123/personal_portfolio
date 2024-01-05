@@ -10,38 +10,62 @@ import {motion} from 'framer-motion';
 // variants
 import {fadeIn} from '../../variants';
 
-import { useState } from 'react';
+// for sending out the api email call
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 //const [email, setEmail] = useState('');
 //const [name, setName] = useState('');
 //const [message, setMessage] = useState('');
 
-const sendEmail = async (e) => {
-    e.preventDefault();
+//const sendEmail = async (e) => {
+//    e.preventDefault();
+//
+//    try {
+//      const res = await fetch('/api/SendEmail', {
+//        method: 'GET',
+//        headers: {
+//          'Content-Type': 'application/json',
+//        },
+////        body: JSON.stringify({
+////          text: "NICk"
+////        }),
+//      });
+//      console.log("ASDAOSDJASD")
+//      const data = await res.json();
+//      console.log("ASDAOSDJASD2")
+//
+//      if (data.status === 'Ok') {
+//        alert('Email sent successfully!');
+//      }
+//    } catch (error) {
+//      console.error(error);
+//    }
+//  };
 
+const Contact = () => {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchAPI = async () => {
+    setIsLoading(true);
     try {
-      const res = await fetch('/api/SendEmail', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-//        body: JSON.stringify({
-//          text: "NICk"
-//        }),
-      });
-      console.log("ASDAOSDJASD")
-      const data = await res.json();
-      console.log("ASDAOSDJASD2")
-
-      if (data.status === 'Ok') {
-        alert('Email sent successfully!');
-      }
+      const response = await axios.get('https://nicks-apis.onrender.com/send_email');
+      setData(response.data); // Set data
     } catch (error) {
-      console.error(error);
+      // You can add error handling logic here
+      setData(null);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-const Contact = () => {
+  useEffect(() => {
+    if (isLoading) {
+      fetchAPI();
+    }
+  }, [isLoading]);
+
   return (
     <div className='h-full bg-primary/30'>
         <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
@@ -57,7 +81,7 @@ const Contact = () => {
                     </div>
                     <input type="text" placeholder="subject" className="input" />
                     <textarea placeholder='message' className='textarea'></textarea>
-                    <button onClick={sendEmail}
+                    <button
                     className='btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all
                     duration-300 flex items-center justify-center overflow-hidden hover:border-accent group'>
                         <span className='group-hover:-translate-y-[120%] group-hover:opacity-0
@@ -66,6 +90,17 @@ const Contact = () => {
                         group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300
                         absolute text-[22px]'/>
                     </button>
+                    <div>
+                      <button onClick={() => setIsLoading(true)}>Fetch Data</button>
+                      {isLoading ? (
+                        <p>Loading...</p>
+                      ) : (
+                        <>
+                          <h1>API Response:</h1>
+                          <pre>{JSON.stringify(data, null, 2)}</pre>
+                        </>
+                      )}
+                    </div>
                 </form>
             </div>
         </div>
