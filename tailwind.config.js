@@ -14,7 +14,7 @@ else if (env == "production"){
     explosion_name = 'url("bg-explosion.png")';
     circle_name = 'url("bg-circles.png")';
     circleStarName = 'url("circle-star.svg")';
-    site_name_bg = 'url("site-bg.svg")';
+    site_name_bg = 'url("/public/site-bg.svg")';
 }
 
 module.exports = {
