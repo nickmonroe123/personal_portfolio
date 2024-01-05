@@ -19,8 +19,8 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     name_from: '',
-    email_from: '',
     subject_from: '',
+    email_from: '',
     message_from: '',
   });
 
