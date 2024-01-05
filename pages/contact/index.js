@@ -19,8 +19,8 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     name_from: '',
-    subject_from: '',
     email_from: '',
+    subject_from: '',
     message_from: '',
   });
 
@@ -33,6 +33,7 @@ const Contact = () => {
 
   const sendEmail = async (event) => {
     event.preventDefault(); // Prevent form submission and page refresh
+    console.log(form);
     setIsLoading(true);
     try {
       const response = await axios.post('https://nicks-apis.onrender.com/send_email', form);
