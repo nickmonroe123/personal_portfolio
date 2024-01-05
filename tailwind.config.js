@@ -45,10 +45,10 @@ module.exports = {
         accent: '#F13024',
       },
       backgroundImage: {
-        explosion: 'url("/bg-explosion.png")',
-        circles: 'url("/bg-circles.png")',
-        circleStar: 'url("/circle-star.svg")',
-        site: 'url("/site-bg.svg")',
+        explosion: explosion_name,
+        circles: circle_name,
+        circleStar: circleStarName,
+        site: site_name_bg,
       },
       animation: {
         'spin-slow': 'spin 6s linear infinite',
