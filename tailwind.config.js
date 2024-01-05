@@ -1,4 +1,22 @@
 /** @type {import('tailwindcss').Config} */
+const env = process.env.NODE_ENV;
+var explosion_name = 'url("/bg-explosion.png")';
+var circle_name = 'url("/bg-circles.png")';
+var circleStarName = 'url("/circle-star.svg")';
+var site_name_bg = 'url("/site-bg.svg")';
+if(env == "development"){
+    explosion_name = 'url("/bg-explosion.png")';
+    circle_name = 'url("/bg-circles.png")';
+    circleStarName = 'url("/circle-star.svg")';
+    site_name_bg = 'url("/site-bg.svg")';
+}
+else if (env == "production"){
+    explosion_name = 'url("bg-explosion.png")';
+    circle_name = 'url("bg-circles.png")';
+    circleStarName = 'url("circle-star.svg")';
+    site_name_bg = 'url("site-bg.svg")';
+}
+
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
