@@ -4,18 +4,18 @@ var explosion_name = 'url("/bg-explosion.png")';
 var circle_name = 'url("/bg-circles.png")';
 var circleStarName = 'url("/circle-star.svg")';
 var site_name_bg = 'url("/site-bg.svg")';
-//if(env == "development"){
-//    explosion_name = 'url("/bg-explosion.png")';
-//    circle_name = 'url("/bg-circles.png")';
-//    circleStarName = 'url("/circle-star.svg")';
-//    site_name_bg = 'url("/site-bg.svg")';
-//}
-//else if (env == "production"){
-//    explosion_name = 'url("/public/bg-explosion.png")';
-//    circle_name = 'url("/public/bg-circles.png")';
-//    circleStarName = 'url("/public/circle-star.svg")';
-//    site_name_bg = 'url("/public/site-bg.svg")';
-//}
+if(env == "development"){
+    explosion_name = 'url("/bg-explosion.png")';
+    circle_name = 'url("/bg-circles.png")';
+    circleStarName = 'url("/circle-star.svg")';
+    site_name_bg = 'url("/site-bg.svg")';
+}
+else if (env == "production"){
+    explosion_name = 'url("/personal_portfolio/bg-explosion.png")';
+    circle_name = 'url("/personal_portfolio/bg-circles.png")';
+    circleStarName = 'url("/personal_portfolio/circle-star.svg")';
+    site_name_bg = 'url("/personal_portfolio/site-bg.svg")';
+}
 
 module.exports = {
   content: [
