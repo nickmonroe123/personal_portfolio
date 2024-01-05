@@ -14,44 +14,44 @@ import {fadeIn} from '../../variants';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-//const [email, setEmail] = useState('');
-//const [name, setName] = useState('');
-//const [message, setMessage] = useState('');
-
-//const sendEmail = async (e) => {
-//    e.preventDefault();
+const Contact = () => {
+//  const [data, setData] = useState(null);
+//  const [isLoading, setIsLoading] = useState(false);
 //
+//  const fetchAPI = async (event) => {
+//    event.preventDefault(); // Prevent form submission and page refresh
+//    setIsLoading(true);
 //    try {
-//      const res = await fetch('/api/SendEmail', {
-//        method: 'GET',
-//        headers: {
-//          'Content-Type': 'application/json',
-//        },
-////        body: JSON.stringify({
-////          text: "NICk"
-////        }),
-//      });
-//      console.log("ASDAOSDJASD")
-//      const data = await res.json();
-//      console.log("ASDAOSDJASD2")
-//
-//      if (data.status === 'Ok') {
-//        alert('Email sent successfully!');
-//      }
+//      const response = await axios.post('https://nicks-apis.onrender.com/send_email');
+//      setData(response.data); // Set data
 //    } catch (error) {
-//      console.error(error);
+//      // You can add error handling logic here
+//      setData(null);
+//    } finally {
+//      setIsLoading(false);
 //    }
 //  };
 
-const Contact = () => {
+
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [form, setForm] = useState({
+    name_from: '',
+    email_from: '',
+  });
 
-  const fetchAPI = async (event) => {
+  const handleInputChange = (event) => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const sendEmail = async (event) => {
     event.preventDefault(); // Prevent form submission and page refresh
     setIsLoading(true);
     try {
-      const response = await axios.get('https://nicks-apis.onrender.com/send_email');
+      const response = await axios.post('https://your-api-url.com', form);
       setData(response.data); // Set data
     } catch (error) {
       // You can add error handling logic here
@@ -60,6 +60,7 @@ const Contact = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <div className='h-full bg-primary/30'>
         <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
@@ -68,10 +69,26 @@ const Contact = () => {
                 <h2 className='h2 text-center mb-12'>
                     Let&apos;s <span className='text-accent'>connect.</span>
                 </h2>
-                <form className='flex-1 flex flex-col gap-6 w-full mx-auto'>
+                <form onSubmit={sendEmail} className='flex-1 flex flex-col gap-6 w-full mx-auto'>
                     <div className='flex gap-x-6 w-full'>
-                        <input type="text" placeholder="name" className="input" />
-                        <input type="text" placeholder="email" className="input" />
+                        <input
+                            type="text"
+                            name="name_from"
+                            placeholder="name"
+                            className="input"
+                            value={form.name_from}
+                            onChange={handleInputChange}
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="email_from"
+                            placeholder="email"
+                            className="input"
+                            value={form.email_from}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </div>
                     <input type="text" placeholder="subject" className="input" />
                     <textarea placeholder='message' className='textarea'></textarea>
@@ -84,17 +101,6 @@ const Contact = () => {
                         group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300
                         absolute text-[22px]'/>
                     </button>
-                    <div>
-                      <button onClick={fetchAPI}>Fetch Data</button>
-                      {isLoading ? (
-                        <p>Loading...</p>
-                      ) : (
-                        <>
-                          <h1>API Response:</h1>
-                          <pre>{JSON.stringify(data, null, 2)}</pre>
-                        </>
-                      )}
-                    </div>
                 </form>
             </div>
         </div>
