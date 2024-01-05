@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
   return (
   <Layout>
     <Head>
-      <link rel="shortcut icon" href=image_name />
+      <link rel="shortcut icon" href={image_name} />
     </Head>
     <AnimatePresence mode='wait'>
         <motion.div key={router.route} className='h-full'>
