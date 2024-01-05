@@ -1,4 +1,6 @@
 import '../styles/globals.css';
+// Next.js docs (default import)
+import Head from 'next/head';
 
 // components
 import Layout from '../components/Layout';
@@ -14,6 +16,9 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
   <Layout>
+    <Head>
+      <link rel="shortcut icon" href="/favicon.ico" />
+    </Head>
     <AnimatePresence mode='wait'>
         <motion.div key={router.route} className='h-full'>
             <Transition/>

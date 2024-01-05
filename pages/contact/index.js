@@ -16,6 +16,7 @@ import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [data, setData] = useState(null);
+  const [buttonText, setButtonText] = useState("Let's talk");
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     name_from: '',
@@ -33,14 +34,17 @@ const Contact = () => {
 
   const sendEmail = async (event) => {
     event.preventDefault(); // Prevent form submission and page refresh
+    setButtonText("Sending...");
     console.log(form);
     setIsLoading(true);
     try {
       const response = await axios.post('https://nicks-apis.onrender.com/send_email', form);
       setData(response.data); // Set data
+      setButtonText("Sent!");
     } catch (error) {
       // You can add error handling logic here
       setData(null);
+      setButtonText("Sent!");
     } finally {
       setIsLoading(false);
     }
