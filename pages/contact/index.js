@@ -47,7 +47,8 @@ const Contact = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchAPI = async () => {
+  const fetchAPI = async (event) => {
+    event.preventDefault(); // Prevent form submission and page refresh
     setIsLoading(true);
     try {
       const response = await axios.get('https://nicks-apis.onrender.com/send_email');
@@ -59,7 +60,6 @@ const Contact = () => {
       setIsLoading(false);
     }
   };
-
   return (
     <div className='h-full bg-primary/30'>
         <div className='container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full'>
